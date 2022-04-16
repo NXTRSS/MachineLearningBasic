@@ -3,7 +3,7 @@
 Poniżej przedstawiam instrukcję niezbędnych kroków do wykonania przed zajęciami
 
 ## Praca z VirtualEnv
-Osobiście polecam skorzystać z Anacondy (instrukcja poniżej) jednak jeśli ktoś chce wykorzystywać venv oraz pip poniej podaję komendy"
+Osobiście polecam skorzystać z Anacondy (instrukcja poniżej) jednak jeśli ktoś chce wykorzystywać venv oraz pip poniej podaję komendy:
 ```bash
 pip install virtualenv
 
@@ -88,7 +88,7 @@ python -m ipykernel install --user --name ml_basic --display-name "Python (ml_ba
 ## Rozpoczęcie (oraz wznowienie pracy)
 Przy każdym wznowieniu pracy (ponownym odpaleniu komputera i maszyny wirtualnej) proszę wejście do odpowiedniego folderu:
 ```bash
-cd WSB/ml/MachineLearningBasic
+cd SDA/ml_basic/MachineLearningBasic
 ```
  zaktywować środowisko o nazwie *ml*:
 ```bash
