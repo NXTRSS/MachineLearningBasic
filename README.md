@@ -1,11 +1,23 @@
-# Zajęcia z Uczenia Maszynowego WSB
+# Lekcja demo - Uczenie Maszynowe
 
 Poniżej przedstawiam instrukcję niezbędnych kroków do wykonania przed zajęciami
 
+## Praca z VirtualEnv
+Osobiście polecam skorzystać z Anacondy (instrukcja poniżej) jednak jeśli ktoś chce wykorzystywać venv oraz pip poniej podaję komendy"
+```bash
+pip install virtualenv
 
-## Wymagania sprzętowe
+virtualenv ml_basic
 
-Wirtualna Maszyna z Ubuntu 20.04, **RAM** minimum 5918MB najlepiej 8192MB, pamięć 30GB dla wygody 40GB
+source ml_basic/venv/bin/activate
+
+pip install -r requirements.txt
+
+jupyter nbextension enable codefolding/edit
+python -m ipykernel install --user --name ml_basic --display-name "Python (ml_basic)”
+
+jupyter notebook
+```
 
 ## Zainstalowanie Minicondy
 Pomoże nam ona w zarządzaniu środowiskami pythonowymi oraz w ściaganiu niezbędnych paczek (np. Tensor Flow)
@@ -46,46 +58,46 @@ Ta nazwa w nawiasie to właśnie nazwa naszego środowiska python - w tej sytuac
 Stwórzmy nowe foldery aby łatwiej poruszać się po plikach:
 ```bash
 cd ~
-mkdir WSB/ml -p
-cd WSB/ml
+mkdir SDA/ml_basic -p
+cd SDA/ml_basic
 ```
 Teraz do folderu ściągnijmy pliki z GitHub potrzebne podczas zajęć
 ```bash
-git clone https://github.com/NXTRSS/MachineLearningCourse
+git clone https://github.com/NXTRSS/MachineLearningBasic
 ```
 *P.S. Można też wejść w dostarczony link i ściągnąć dane przez wygenerowanie archiwum .zip a następnie wypakowanie go w naszym folderze*
 ## Stworzenie środowiska python
 Jeśli ściągnięcie plików przebiegło poprawnie w naszym folderze powinien znajdować się plik *environment.yaml* i za jego pomocą stworzymy nowe środowisko pythonowe o nazwie **ml**:
 ```bash
-cd MachineLearningCourse
+cd MachineLearningBasic
 
 conda env create -f environment.yaml
 
-conda activate ml
+conda activate ml_basic
 ```
 Po aktywacji nowego środowiska zamiast *base* powinno być widoczne *ml* w naszym terminalu (przykład):
 ```bash
-(ml) kamil@ubuntu:~$
+(ml_basic) kamil@ubuntu:~$
 ```
 **Proszę pamiętać aby zawsze aktywować to środowisko po wznowieniu pracy na komputerze!**\
 Proszę wywołać poniższe linijki aby aktywować kilka dodatkowych ustawień:
 ```bash
 jupyter nbextension enable codefolding/edit
-python -m ipykernel install --user --name ml --display-name "Python (ml)”
+python -m ipykernel install --user --name ml_basic --display-name "Python (ml_basic)”
 ```
 ## Rozpoczęcie (oraz wznowienie pracy)
 Przy każdym wznowieniu pracy (ponownym odpaleniu komputera i maszyny wirtualnej) proszę wejście do odpowiedniego folderu:
 ```bash
-cd WSB/ml/MachineLearningCourse
+cd WSB/ml/MachineLearningBasic
 ```
  zaktywować środowisko o nazwie *ml*:
 ```bash
-conda activate ml
+conda activate ml_basic
 ```
 A następnie wywołać narzędzie **Jupyter Notebook**, które jest webową aplikacją, na której będziemy pracować na naszych zajęciach:
 ```bash
 jupyter notebook
 ```
 Po aktywacji powyższej komendy otworzy się przeglądarka a w niej nasze pliki.\
-**Ważne: w narzędziu Jupyter Notebook do uruchamiania przygotowanych skryptów trzeba będzie "wyklikać" kernel *Python (ml)* - będzie to pokazane na zajęciach.**\
-Do działania plików niezbędne będą również zbiory danych - umieszczone na dysku Google
+**Ważne: w narzędziu Jupyter Notebook do uruchamiania przygotowanych skryptów trzeba będzie "wyklikać" kernel *Python (ml_basic)* - będzie to pokazane na zajęciach.**\
+
